@@ -51,9 +51,40 @@
     padding: 0 40px;
   }
 
+  /* ── BUILT WITH CURSOR TAB ───────────────────────── */
+  .built-tab {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1001;
+    display: inline-block;
+    padding: 8px 16px 10px;
+    background: var(--ink);
+    color: var(--bg);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 6px 18px rgba(26, 24, 21, 0.12);
+    transition: background 0.2s, color 0.2s;
+    animation: tabDrop 0.7s 0.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .built-tab:hover {
+    background: var(--accent);
+    color: #fff;
+  }
+  @keyframes tabDrop {
+    from { opacity: 0; transform: translateX(-50%) translateY(-100%); }
+    to { opacity: 1; transform: translateX(-50%) translateY(0); }
+  }
+
   /* ── TOP BAR ─────────────────────────────────────── */
   .topbar {
-    padding: 32px 0 0;
+    padding: 48px 0 0;
     display: flex;
     justify-content: space-between;
     align-items: baseline;
@@ -606,6 +637,8 @@
 </style>
 </head>
 <body>
+
+<a class="built-tab" href="https://cursor.com" target="_blank" rel="noopener noreferrer">Built using Cursor</a>
 
 <div class="wrap">
   <header class="topbar">
